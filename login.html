@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+    <link rel="stylesheet" href="login.css">
+   	<link href='../wp-content/plugins/simple-google-recaptcha/sgrb747.css?ver=1684223021' id='sgr-css' media='all' rel='stylesheet' type='text/css'>
+    <link href='../wp-includes/css/dist/block-library/style.mind4d0.css?ver=6.9' id='wp-block-library-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/plugins/3d-viewer/public/css/custom-styleef6d.css?ver=1.8.2' id='bp3d-custom-style-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/plugins/block-options/build/style.builde5ff.css?ver=new' id='editorskit-frontend-css' media='all' rel='stylesheet' type='text/css'>
+    <link href='../wp-content/plugins/contact-form-7/includes/css/styles1b46.css?ver=6.1.4' id='contact-form-7-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/plugins/translatepress-multilingual/assets/css/trp-floater-language-switcher8d18.css?ver=3.0.5' id='trp-floater-language-switcher-style-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher8d18.css?ver=3.0.5' id='trp-language-switcher-style-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/plugins/wpfront-notification-bar/css/wpfront-notification-bar.min8bb8.css?ver=3.5.1.05102' id='wpfront-notification-bar-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/themes/cam/assets/fonts/iconsmind/iconsmindd4d0.css?ver=6.9' id='iconsmind-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/themes/cam/assets/fonts/bootstrap-icons/bootstrap-iconsd4d0.css?ver=6.9' id='bootstrap-icons-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/themes/cam/assets/css/theme.mind4d0.css?ver=6.9' id='theme-min-css' media='all' rel='stylesheet' type='text/css'>
+	<link href='../wp-content/themes/cam/css/themed4d0.css?ver=6.9' id='theme-css' media='all' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+    <header class="z-index-fixed sticky-reverse">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<div class="container position-relative">
+				<a class="navbar-brand" href="index.html"><img alt="" class="img-fluid" src="../wp-content/themes/cam/img/logo.jpg"></a>
+				<div class="d-none d-sm-flex align-items-center navbar-no-collapse-items order-lg-last">
+					<div class="nav-item me-6 me-lg-0">
+						<a class="btn btn-primary btn-sm" href="https://crypto-assets-management.tilvest-partenaires.com/login"><span class="icon-Lock-User"></span> Customer access</a>
+					</div>
+				</div>
+				<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+					<button aria-controls="navbar-demo-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-last" data-bs-target="#navbar-demo-1" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"><i></i></span></button>
+				</div>
+                
+				<div class="collapse navbar-collapse" id="navbar-demo-1">
+					<ul class="navbar-nav mx-auto">
+						<!-- <li class="nav-item me-xxl-3">
+							<a class="nav-link" href="index.html#intro">Presentation</a>
+						</li>
+						<li class="nav-item me-xxl-3">
+							<a class="nav-link" href="accedez-a-nos-tarifs/index.html">Our rates / Performance</a>
+						</li>
+						<li class="nav-item me-xxl-3">
+							<a class="nav-link" href="nos-articles/index.html">Our publications</a>
+						</li>
+						<li class="nav-item me-xxl-3">
+							<a class="nav-link" href="a-propos/index.html">About us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact/index.html">Contact</a>
+						</li> -->
+						<li class="nav-item d-block d-sm-none mb-2">
+							<a class="btn btn-primary btn-sm" href="https://crypto-assets-management.tilvest-partenaires.com/login"><span class="icon-Lock-User"></span> Customer access</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+    <section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">Don't have an account?</h2>
+        <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+        <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">Have an account?</h2>
+        <p class="user_registered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+        <button class="user_registered-login" id="login-button">Login</button>
+      </div>
+    </div>
+    
+<div class="user_options-forms" id="user_options-forms">
+
+  <!-- 可選：放這裡顯示訊息 -->
+  <p id="authMsg" style="margin:12px 0; color:#b00;"></p>
+
+  <div class="user_forms-login">
+    <h2 class="forms_title">Login</h2>
+    <form class="forms_form">
+      <fieldset class="forms_fieldset">
+        <div class="forms_field">
+          <input id="loginEmail" type="email" placeholder="Email" class="forms_field-input" required autofocus />
+        </div>
+        <div class="forms_field">
+          <input id="loginPassword" type="password" placeholder="Password" class="forms_field-input" required />
+        </div>
+      </fieldset>
+      <div class="forms_buttons">
+        <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+        <input type="submit" value="Log In" class="forms_buttons-action">
+      </div>
+    </form>
+  </div>
+
+  <div class="user_forms-signup">
+    <h2 class="forms_title">Sign Up</h2>
+    <form class="forms_form">
+      <fieldset class="forms_fieldset">
+        <div class="forms_field">
+          <input id="signupEmail" type="email" placeholder="Email" class="forms_field-input" required />
+        </div>
+
+        <!-- 新增：錢包地址（不限制格式，純文字） -->
+        <div class="forms_field">
+          <input id="signupWallet" type="text" placeholder="Wallet Address (e.g. 0x...)" class="forms_field-input" required />
+        </div>
+
+        <div class="forms_field">
+          <input id="signupPassword" type="password" placeholder="Password" class="forms_field-input" required />
+        </div>
+      </fieldset>
+      <div class="forms_buttons">
+        <input type="submit" value="Sign up" class="forms_buttons-action">
+      </div>
+    </form>
+  </div>
+
+</div>
+
+  </div>
+</section>
+<script src="login_ana.js"></script>
+<script type="module" src="login.js"></script>
+</body>
+
+</html>

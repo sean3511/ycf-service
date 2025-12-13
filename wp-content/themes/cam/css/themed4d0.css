@@ -1,0 +1,29 @@
+.navbar .navbar-nav .nav-link {
+    font-size: 17px !important;
+}
+
+.bg-shade-braun {
+    background-color: #5b493a!important;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-brand {
+        width: 7.5rem;
+    }
+}
+canvas#myChart {
+    transition: background-color 0.5s ease;
+}
+canvas#myChart:hover {
+    background-color: #fffaef;
+}
+
+.specialborder {
+    border: 2px solid #000000!important;
+}
+
+@media (max-width: 1400px) {
+.navbar .navbar-nav .nav-link {
+    font-size: 16px !important;
+}
+}

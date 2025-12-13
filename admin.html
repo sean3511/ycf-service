@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Console</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto; margin:0; background:#0b0f19; color:#e9eefc;}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px;}
+    .card{background:#111a2e; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px;}
+    .row{display:flex; gap:12px; flex-wrap:wrap;}
+    input,button{font-size:16px; border-radius:10px; padding:10px 12px; border:1px solid rgba(255,255,255,.14); background:#0c1324; color:#e9eefc;}
+    button{background:#2b6dff; border:none; cursor:pointer;}
+    button.secondary{background:#2a3350;}
+    .muted{color:rgba(233,238,252,.7); font-size:13px}
+    .hide{display:none;}
+    .table-wrap{overflow-x:auto; border-radius:12px; border:1px solid rgba(255,255,255,.10);}
+    table{border-collapse:collapse; width:100%; min-width:920px; background:#0c1324;}
+    th,td{padding:12px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; white-space:nowrap;}
+    th{background:#0f1a33;}
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(43,109,255,.18); border:1px solid rgba(43,109,255,.35); font-size:12px;}
+    .err{color:#ff8aa1}
+    .ok{color:#86f7c7}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>管理員後台</h2>
+    <p class="muted">登入後會檢查 <b>profiles.role = admin</b>，才可產生重設密碼 OTP。</p>
+
+    <div id="loginCard" class="card">
+      <div class="row">
+        <input id="email" placeholder="admin email" style="flex:1; min-width:240px;">
+        <input id="password" type="password" placeholder="password" style="flex:1; min-width:240px;">
+        <button id="btnLogin">登入</button>
+      </div>
+      <div id="loginMsg" class="muted" style="margin-top:10px;"></div>
+    </div>
+
+    <div id="app" class="card hide" style="margin-top:14px;">
+      <div class="row" style="justify-content:space-between; align-items:center;">
+        <div>
+          <span class="pill" id="rolePill">role: -</span>
+          <div class="muted" id="meLine" style="margin-top:6px;"></div>
+        </div>
+        <button class="secondary" id="btnLogout">登出</button>
+      </div>
+
+      <hr style="border:0; border-top:1px solid rgba(255,255,255,.10); margin:16px 0;">
+
+      <h3 style="margin:0 0 10px;">產生重設密碼 OTP</h3>
+      <div class="muted" style="margin-bottom:10px;">輸入客戶 Email → 產生 6 碼 OTP（你再人工傳給客戶）。</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:380px;">客戶 Email</th>
+              <th style="width:160px;">操作</th>
+              <th>結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input id="targetEmail" placeholder="user@example.com" style="width:100%;"></td>
+              <td><button id="btnGen">產生 OTP</button></td>
+              <td><span id="result"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="muted" style="margin-top:10px;">提示：表格已支援橫向延伸（overflow-x），之後你要加欄位就直接加 th/td。</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+    const SUPABASE_URL = "https://pbuocwijhjkpgexrnlmp.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_1aKdi9gDUy9E2SEE9iKDQA_dvczAaia";
+    const FUNCTION_URL = "https://pbuocwijhjkpgexrnlmp.functions.supabase.co/bright-processor";
+
+    // ✅ 用 sessionStorage（關分頁就登出）
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { storage: window.sessionStorage, persistSession: true, autoRefreshToken: true },
+    });
+
+    const $ = (id) => document.getElementById(id);
+
+    async function loadMeAndCheckAdmin() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return false;
+
+      // 只查自己的 profile（RLS 允許）
+      const { data: prof, error } = await supabase
+        .from("profiles")
+        .select("role,email")
+        .eq("id", user.id)
+        .maybeSingle();
+
+      if (error) {
+        $("loginMsg").textContent = "讀取 profiles 失敗：" + error.message;
+        return false;
+      }
+
+      $("meLine").textContent = `登入：${prof?.email || user.email} (${user.id})`;
+      $("rolePill").textContent = `role: ${prof?.role || "-"}`;
+
+      if (prof?.role !== "admin") {
+        $("loginMsg").innerHTML = `<span class="err">此帳號不是 admin，禁止使用。</span>`;
+        await supabase.auth.signOut();
+        return false;
+      }
+
+      return true;
+    }
+
+    function showApp(ok) {
+      $("loginCard").classList.toggle("hide", ok);
+      $("app").classList.toggle("hide", !ok);
+    }
+
+    // 初次載入：如果 session 還在就自動登入
+    (async () => {
+      const ok = await loadMeAndCheckAdmin();
+      showApp(ok);
+    })();
+
+    $("btnLogin").addEventListener("click", async () => {
+      $("loginMsg").textContent = "登入中…";
+      const email = $("email").value.trim().toLowerCase();
+      const password = $("password").value;
+
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        $("loginMsg").innerHTML = `<span class="err">${error.message}</span>`;
+        return;
+      }
+
+      const ok = await loadMeAndCheckAdmin();
+      showApp(ok);
+      if (ok) $("loginMsg").textContent = "";
+    });
+
+    $("btnLogout").addEventListener("click", async () => {
+      await supabase.auth.signOut();
+      showApp(false);
+      $("loginMsg").textContent = "已登出";
+    });
+
+    $("btnGen").addEventListener("click", async () => {
+      const email = $("targetEmail").value.trim().toLowerCase();
+      $("result").textContent = "處理中…";
+
+      if (!email) {
+        $("result").innerHTML = `<span class="err">請輸入 email</span>`;
+        return;
+      }
+
+      // 取目前 session 的 access_token，丟給 Edge Function
+      const { data: { session } } = await supabase.auth.getSession();
+      const jwt = session?.access_token;
+
+      if (!jwt) {
+        $("result").innerHTML = `<span class="err">沒有登入狀態，請重新登入</span>`;
+        return;
+      }
+
+      const res = await fetch(FUNCTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + jwt
+        },
+        body: JSON.stringify({ email })
+      });
+
+    let payloadText = await res.text();
+    let data = null;
+    try { data = JSON.parse(payloadText); } catch {}
+
+    if (!res.ok) {
+    $("result").innerHTML = `<span class="err">HTTP ${res.status}：${payloadText}</span>`;
+    return;
+    }
+
+    if (!data?.ok) {
+    $("result").innerHTML = `<span class="err">失敗：${data?.error || payloadText || "unknown"}</span>`;
+    return;
+    }
+
+    $("result").innerHTML = `<span class="ok">OTP：${data.email_otp || "(無)"}</span>（請人工傳給客戶）`;
+
+      $("result").innerHTML = `<span class="ok">OTP：${data.email_otp || "(無)"}</span>（請人工傳給客戶）`;
+    });
+  </script>
+</body>
+</html>

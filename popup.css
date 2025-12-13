@@ -1,0 +1,106 @@
+/* popup.css - simple modal toast */
+
+:root{
+  --popup-z: 9999;
+  --popup-radius: 14px;
+  --popup-shadow: 0 20px 60px rgba(0,0,0,.25);
+  --popup-bg: #fff;
+  --popup-text: #111;
+  --popup-muted: rgba(0,0,0,.65);
+  --popup-danger: #b00020;
+  --popup-success: #0a7;
+}
+
+.popup-mask{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--popup-z);
+  padding: 16px;
+}
+
+.popup-mask.is-open{ display:flex; }
+
+.popup{
+  width: min(520px, 100%);
+  background: var(--popup-bg);
+  color: var(--popup-text);
+  border-radius: var(--popup-radius);
+  box-shadow: var(--popup-shadow);
+  overflow: hidden;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: .18s ease;
+}
+
+.popup-mask.is-open .popup{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.popup-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  font-weight: 700;
+}
+
+.popup-title{
+  font-size: 16px;
+}
+
+.popup-close{
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--popup-muted);
+}
+
+.popup-body{
+  padding: 14px 16px 16px;
+  white-space: pre-line; /* 支援換行 */
+  font-size: 14px;
+  color: var(--popup-muted);
+}
+
+.popup-foot{
+  padding: 0 16px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.popup-btn{
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.popup-btn.primary{
+  background: #2b7cff;
+  color: #fff;
+}
+
+.popup-status{
+  font-weight: 800;
+}
+
+.popup-status.success{ color: var(--popup-success); }
+.popup-status.error{ color: var(--popup-danger); }
+
+/* 小螢幕更好按 */
+@media (max-width: 420px){
+  .popup-head{ padding: 12px 14px; }
+  .popup-body{ padding: 12px 14px 14px; }
+  .popup-foot{ padding: 0 14px 14px; }
+}
