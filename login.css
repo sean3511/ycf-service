@@ -88,12 +88,13 @@ input::placeholder {
  * * Page background
  * */
 .user {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: #F1F1FF;
+  background: #ccc;
   background-size: cover;
 }
 .user_options-container {
@@ -104,7 +105,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: #2F7BC7;
+  background-color: rgba(34, 34, 34, 0.85);
   border-radius: 3px;
 }
 
@@ -158,7 +159,7 @@ input::placeholder {
   top: 50%;
   left: 30px;
   width: calc(50% - 30px);
-  min-height: 420px;
+  min-height: 520px;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
@@ -170,12 +171,12 @@ input::placeholder {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 .user_options-forms .forms_title {
-  margin-bottom: 45px;
+  margin-bottom: 24px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1em;
   text-transform: uppercase;
-  color: #095CAE;
+  color: #e8716d;
   letter-spacing: 0.1rem;
 }
 .user_options-forms .forms_field:not(:last-of-type) {
@@ -212,7 +213,7 @@ input::placeholder {
   color: rgb(178.5, 178.5, 178.5);
 }
 .user_options-forms .forms_buttons-action {
-  background-color: #095CAE;
+  background-color: #e8716d;
   border-radius: 3px;
   padding: 10px 35px;
   font-size: 1rem;
@@ -270,8 +271,55 @@ input::placeholder {
  * * Responsive 990px
  * */
 @media screen and (max-width: 990px) {
+  .user_options-text {
+    background-color: transparent !important;
+  }
+  .user_unregistered-title {
+    display: none;
+  }
+  .user_unregistered-text {
+    display: none;
+  }
+  .user_registered-title {
+    display: none;
+  }
+  .user_registered-text {
+    display: none;
+  }
   .user_options-forms {
-    min-height: 350px;
+    left: 50% !important;
+    width: 80vw !important;
+    transform: translate3d(-50%, -50%, 0) !important;
+    animation: none !important;
+  }
+  .user_options-unregistered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user_options-registered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user_unregistered-signup {
+    position: absolute;
+    bottom: 300px;
+    border-radius: 8px;
+    border: 1px solid rgb(128, 128, 128);
+    width: 120px;
+    height: 54px;
+  }
+  .user_registered-login {
+    position: absolute;
+    bottom: 300px;
+    border-radius: 8px;
+    border: 1px solid rgb(128, 128, 128);
+    width: 120px;
+    height: 54px;
+  }
+  .user_options-forms {
+    min-height: 460px;
   }
   .user_options-forms .forms_buttons {
     flex-direction: column;

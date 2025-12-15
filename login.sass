@@ -90,6 +90,7 @@ input
  * Page background
  */
 .user
+  position: relative
   display: flex
   justify-content: center
   align-items: center
@@ -161,7 +162,7 @@ input
   left: 30px
 
   width: calc(50% - 30px)
-  min-height: 420px
+  min-height: 520px
   background-color: $white
   border-radius: $bdrds
   box-shadow: 2px 0 15px rgba($black, .25)
@@ -175,7 +176,7 @@ input
 
   .forms
     &_title
-      margin-bottom: 45px
+      margin-bottom: 24px
 
       font-size: 1.5rem
       font-weight: $ff-medium
@@ -286,8 +287,55 @@ input
  * Responsive 990px
  */
 @media screen and (max-width: 990px)
+  .user_options-text
+    background-color: transparent !important
+
+  .user_unregistered-title
+    display: none
+
+  .user_unregistered-text
+    display: none
+  
+  .user_registered-title
+   display: none
+  
+  .user_registered-text
+    display: none
+  
+  .user_options-forms 
+    left: 50% !important
+    width: 80vw !important
+    transform: translate3d(-50%, -50%, 0) !important
+    animation: none !important
+  
+  .user_options-unregistered
+    display: flex
+    flex-direction: column
+    align-items: center
+  .user_options-registered
+    display: flex
+    flex-direction: column
+    align-items: center
+  
+  .user_unregistered-signup
+    position: absolute
+    bottom: 300px
+    border-radius: 8px
+    border: 1px solid rgb(128, 128, 128);
+    width: 120px
+    height: 54px
+
+  
+  .user_registered-login
+    position: absolute
+    bottom: 300px
+    border-radius: 8px
+    border: 1px solid rgb(128, 128, 128);
+    width: 120px
+    height: 54px
+  
   .user_options-forms
-    min-height: 350px
+    min-height: 460px
     
     .forms_buttons
       flex-direction: column
