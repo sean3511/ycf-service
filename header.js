@@ -25,7 +25,6 @@ function renderLoggedOut(container) {
   container.innerHTML = "";
   container.appendChild(
     el("a", { class: "btn btn-primary btn-sm", href: LOGIN_URL }, [
-      el("span", { class: "icon-Lock-User" }),
       document.createTextNode(" Customer access"),
     ])
   );
