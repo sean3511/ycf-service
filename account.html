@@ -54,14 +54,15 @@
     <link href="account.css" rel="stylesheet">
 </head>
 <body>
-        <header class="z-index-fixed sticky-reverse">
+
+	<header class="z-index-fixed sticky-reverse">
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<div class="container position-relative">
 				<a class="navbar-brand" href="index.html"><img alt="" class="img-fluid" src="../wp-content/themes/cam/img/logo.jpg"></a>
 				<div class="d-none d-sm-flex align-items-center navbar-no-collapse-items order-lg-last">
-					<!-- <div class="nav-item me-6 me-lg-0">
-						<a class="btn btn-primary btn-sm" href="https://crypto-assets-management.tilvest-partenaires.com/login"><span class="icon-Lock-User"></span> Customer access</a>
-					</div> -->
+					<div class="nav-item me-6 me-lg-0" id="headerAuthActions">
+						<a class="btn btn-primary btn-sm" href="login.html"><span class="icon-Lock-User"></span> Customer access</a>
+					</div>
 				</div>
 				<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
 					<button aria-controls="navbar-demo-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-last" data-bs-target="#navbar-demo-1" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"><i></i></span></button>
@@ -69,23 +70,8 @@
                 
 				<div class="collapse navbar-collapse" id="navbar-demo-1">
 					<ul class="navbar-nav mx-auto">
-						<!-- <li class="nav-item me-xxl-3">
-							<a class="nav-link" href="index.html#intro">Presentation</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="accedez-a-nos-tarifs/index.html">Our rates / Performance</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="nos-articles/index.html">Our publications</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="a-propos/index.html">About us</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact/index.html">Contact</a>
-						</li> -->
-						<li class="nav-item d-block d-sm-none mb-2">
-							<a class="btn btn-primary btn-sm" href="https://crypto-assets-management.tilvest-partenaires.com/login"><span class="icon-Lock-User"></span> Customer access</a>
+						<li class="nav-item d-block d-sm-none mb-2" id="headerAuthActionsMobile">
+							<a class="btn btn-primary btn-sm" href="login.html"><span class="icon-Lock-User"></span> Customer access</a>
 						</li>
 					</ul>
 				</div>
@@ -254,5 +240,6 @@
 			<button style="font-size: 14px; color: black; border: 1px solid #0000001a; border-radius: 5px; width: 256px; height: 32px;" type="submit">Reload page</button>
 		</form>
 	</main></noscript>
+    <script type="module" src="header.js"></script>
 </body>
 </html>

@@ -1,104 +1,86 @@
-/* popup.css - simple modal toast */
-
-:root{
-  --popup-z: 9999;
-  --popup-radius: 14px;
-  --popup-shadow: 0 20px 60px rgba(0,0,0,.25);
-  --popup-bg: #fff;
-  --popup-text: #111;
-  --popup-muted: rgba(0,0,0,.65);
-  --popup-danger: #b00020;
-  --popup-success: #0a7;
-}
-
+/* ===== Popup Mask ===== */
 .popup-mask{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.35);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: var(--popup-z);
-  padding: 16px;
-}
-
-.popup-mask.is-open{ display:flex; }
-
-.popup{
-  width: min(520px, 100%);
-  background: var(--popup-bg);
-  color: var(--popup-text);
-  border-radius: var(--popup-radius);
-  box-shadow: var(--popup-shadow);
-  overflow: hidden;
-  transform: translateY(6px);
-  opacity: 0;
-  transition: .18s ease;
-}
-
-.popup-mask.is-open .popup{
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.popup-head{
+  background: rgba(0,0,0,.45);
   display: flex;
   align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ===== Popup Card ===== */
+.popup{
+  width: 90%;
+  max-width: 420px;
+  background: #ffffff;              /* 白底 */
+  color: #111827;                    /* 深色文字 */
+  border-radius: 14px;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.25),     /* 主陰影 */
+    0 8px 20px rgba(0,0,0,.12);      /* 次陰影 */
+  overflow: hidden;
+}
+
+/* ===== Header ===== */
+.popup-head{
+  display: flex;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  font-weight: 700;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .popup-title{
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #111827;
 }
 
 .popup-close{
-  border: 0;
-  background: transparent;
-  font-size: 22px;
-  line-height: 1;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 20px;
   cursor: pointer;
-  color: var(--popup-muted);
+}
+.popup-close:hover{
+  color: #111827;
 }
 
+/* ===== Body ===== */
 .popup-body{
-  padding: 14px 16px 16px;
-  white-space: pre-line; /* 支援換行 */
+  padding: 16px 18px;
   font-size: 14px;
-  color: var(--popup-muted);
+  line-height: 1.6;
+  color: #1f2937;
 }
 
+/* ===== Footer ===== */
 .popup-foot{
-  padding: 0 16px 16px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  padding: 12px 18px;
+  text-align: right;
+  border-top: 1px solid #e5e7eb;
 }
 
+/* ===== Buttons ===== */
 .popup-btn{
-  border: 0;
-  border-radius: 10px;
-  padding: 10px 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
   font-size: 14px;
 }
 
 .popup-btn.primary{
-  background: #2b7cff;
-  color: #fff;
+  background: #2563eb;
+  color: #ffffff;
+}
+.popup-btn.primary:hover{
+  background: #1d4ed8;
 }
 
-.popup-status{
-  font-weight: 800;
-}
-
-.popup-status.success{ color: var(--popup-success); }
-.popup-status.error{ color: var(--popup-danger); }
-
-/* 小螢幕更好按 */
+/* ===== Mobile tuning ===== */
 @media (max-width: 420px){
   .popup-head{ padding: 12px 14px; }
   .popup-body{ padding: 12px 14px 14px; }

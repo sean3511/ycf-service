@@ -27,3 +27,6 @@ canvas#myChart:hover {
     font-size: 16px !important;
 }
 }
+  #headerAuthActions{
+      gap:12px
+    }

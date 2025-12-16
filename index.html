@@ -84,8 +84,6 @@
 	<script id="sgr-js" src="../wp-content/plugins/simple-google-recaptcha/sgrb747.js?ver=1684223021" type="text/javascript">
 	</script>
 
-	<script id="cookie-law-info-js" src="../wp-content/plugins/cookie-law-info/lite/frontend/js/script.minb186.js?ver=3.3.8" type="text/javascript">
-	</script>
 	<script id="jquery-core-js" src="../wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" type="text/javascript">
 	</script>
 	<script id="jquery-migrate-js" src="../wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" type="text/javascript">
@@ -233,35 +231,18 @@
 
 	<header class="z-index-fixed sticky-reverse">
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
-			<div class="container position-relative">
+			<div style="flex-wrap: nowrap;" class="container position-relative">
 				<a class="navbar-brand" href="index.html"><img alt="" class="img-fluid" src="../wp-content/themes/cam/img/logo.jpg"></a>
-				<div class="d-none d-sm-flex align-items-center navbar-no-collapse-items order-lg-last">
-					<div class="nav-item me-6 me-lg-0">
+				<div class="d-sm-flex align-items-center navbar-no-collapse-items order-lg-last">
+					<div class="nav-item me-lg-0" id="headerAuthActions">
 						<a class="btn btn-primary btn-sm" href="login.html"><span class="icon-Lock-User"></span> Customer access</a>
 					</div>
 				</div>
-				<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-					<button aria-controls="navbar-demo-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-last" data-bs-target="#navbar-demo-1" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"><i></i></span></button>
-				</div>
+			
                 
 				<div class="collapse navbar-collapse" id="navbar-demo-1">
 					<ul class="navbar-nav mx-auto">
-						<!-- <li class="nav-item me-xxl-3">
-							<a class="nav-link" href="index.html#intro">Presentation</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="accedez-a-nos-tarifs/index.html">Our rates / Performance</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="nos-articles/index.html">Our publications</a>
-						</li>
-						<li class="nav-item me-xxl-3">
-							<a class="nav-link" href="a-propos/index.html">About us</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact/index.html">Contact</a>
-						</li> -->
-						<li class="nav-item d-block d-sm-none mb-2">
+						<li class="nav-item d-block d-sm-none mb-2" id="headerAuthActionsMobile">
 							<a class="btn btn-primary btn-sm" href="login.html"><span class="icon-Lock-User"></span> Customer access</a>
 						</li>
 					</ul>
@@ -957,32 +938,7 @@
 	<p>Nous utilisons également des cookies tiers qui nous aident à analyser la façon dont vous utilisez ce site Web, à stocker vos préférences et à fournir le contenu et les publicités qui vous intéressent. Ces cookies ne seront stockés dans votre navigateur qu'avec votre consentement préalable.</p>
 	<p>Vous pouvez choisir d'activer ou de désactiver tout ou partie de ces cookies, mais la désactivation de certains d'entre eux peut affecter votre expérience de navigation.</p> </div><div class="cky-accordion-wrapper" data-cky-tag="detail-categories"> <div class="cky-accordion" id="ckyDetailCategorynecessary"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Necessary" data-cky-tag="detail-category-title" style="color:#6B6B6B">Necessary</button><span class="cky-always-active">Toujours actif</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchnecessary"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#6B6B6B"> <p>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p></div> </div> </div> <div class="cky-accordion-body">  </div> </div><div class="cky-accordion" id="ckyDetailCategoryfunctional"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Functional" data-cky-tag="detail-category-title" style="color:#6B6B6B">Functional</button><span class="cky-always-active">Toujours actif</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchfunctional"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#6B6B6B"> <p>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p></div> </div> </div> <div class="cky-accordion-body">  </div> </div><div class="cky-accordion" id="ckyDetailCategoryanalytics"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Analytics" data-cky-tag="detail-category-title" style="color:#6B6B6B">Analytics</button><span class="cky-always-active">Toujours actif</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchanalytics"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#6B6B6B"> <p>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p></div> </div> </div> <div class="cky-accordion-body">  </div> </div><div class="cky-accordion" id="ckyDetailCategoryperformance"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Performance" data-cky-tag="detail-category-title" style="color:#6B6B6B">Performance</button><span class="cky-always-active">Toujours actif</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchperformance"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#6B6B6B"> <p>Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p></div> </div> </div> <div class="cky-accordion-body">  </div> </div><div class="cky-accordion" id="ckyDetailCategoryadvertisement"> <div class="cky-accordion-item"> <div class="cky-accordion-chevron"><i class="cky-chevron-right"></i></div> <div class="cky-accordion-header-wrapper"> <div class="cky-accordion-header"><button class="cky-accordion-btn" aria-label="Advertisement" data-cky-tag="detail-category-title" style="color:#6B6B6B">Advertisement</button><span class="cky-always-active">Toujours actif</span> <div class="cky-switch" data-cky-tag="detail-category-toggle"><input type="checkbox" id="ckySwitchadvertisement"></div> </div> <div class="cky-accordion-header-des" data-cky-tag="detail-category-description" style="color:#6B6B6B"> <p>Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.</p></div> </div> </div> <div class="cky-accordion-body">  </div> </div> </div></div><div class="cky-footer-wrapper"> <span class="cky-footer-shadow"></span> <div class="cky-prefrence-btn-wrapper" data-cky-tag="detail-buttons"> <button class="cky-btn cky-btn-reject" aria-label="Tout rejeter" data-cky-tag="detail-reject-button" style="color:#c9ae77;background-color:transparent;border-color:#c9ae77"> Tout rejeter </button> <button class="cky-btn cky-btn-preferences" aria-label="Enregistrer mes préférences" data-cky-tag="detail-save-button" style="color:#c9ae77;background-color:transparent;border-color:#c9ae77"> Enregistrer mes préférences </button> <button class="cky-btn cky-btn-accept" aria-label="Accepter tout" data-cky-tag="detail-accept-button" style="color:#FFFFFF;background-color:#c9ae77;border-color:#c9ae77"> Accepter tout </button> </div></div></div></div>
 	</script>
-	<script>
-	               const lazyloadRunObserver = () => {
-	                   const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
-	                   const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
-	                       entries.forEach( ( entry ) => {
-	                           if ( entry.isIntersecting ) {
-	                               let lazyloadBackground = entry.target;
-	                               if( lazyloadBackground ) {
-	                                   lazyloadBackground.classList.add( 'e-lazyloaded' );
-	                               }
-	                               lazyloadBackgroundObserver.unobserve( entry.target );
-	                           }
-	                       });
-	                   }, { rootMargin: '200px 0px 200px 0px' } );
-	                   lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
-	                       lazyloadBackgroundObserver.observe( lazyloadBackground );
-	                   } );
-	               };
-	               const events = [
-	                   'DOMContentLoaded',
-	                   'elementor/lazyload/observe',
-	               ];
-	               events.forEach( ( event ) => {
-	                   document.addEventListener( event, lazyloadRunObserver );
-	               } );
-	</script>
+
 	<link href='../wp-content/plugins/3d-viewer/build/frontendef6d.css?ver=1.8.2' id='bp3d-frontend-css' media='all' rel='stylesheet' type='text/css'>
 	<link href='../wp-content/plugins/bold-timeline/styled4d0.css?ver=6.9' id='bold-timeline-css' media='all' rel='stylesheet' type='text/css'>
 	<link href='../wp-content/plugins/logo-slider-wp/public/assets/css/font-awesome.min8a54.css?ver=1.0.0' id='logo-slider-wp-font-css' media='all' rel='stylesheet' type='text/css'>
@@ -1063,155 +1019,15 @@
 	}
 	/*# sourceURL=lgx-logo-slider-style-inline-css */
 	</style>
-	<link href='../wp-content/plugins/mailpoet/assets/dist/css/mailpoet-public.b1f0906ed4d0.css?ver=6.9' id='mailpoet_public-css' media='all' rel='stylesheet' type='text/css'>
-	<script id="trp-dynamic-translator-js-extra" type="text/javascript">
-	/* <![CDATA[ */
-	var trp_data = {"trp_custom_ajax_url":"https://crypto-assets-management.com/wp-content/plugins/translatepress-multilingual/includes/trp-ajax.php","trp_wp_ajax_url":"https://crypto-assets-management.com/wp-admin/admin-ajax.php","trp_language_to_query":"en_US","trp_original_language":"fr_FR","trp_current_language":"en_US","trp_skip_selectors":["[data-no-translation]","[data-no-dynamic-translation]","[data-trp-translate-id-innertext]","script","style","head","trp-span","translate-press","[data-trp-translate-id]","[data-trpgettextoriginal]","[data-trp-post-slug]"],"trp_base_selectors":["data-trp-translate-id","data-trpgettextoriginal","data-trp-post-slug"],"trp_attributes_selectors":{"text":{"accessor":"outertext","attribute":false},"block":{"accessor":"innertext","attribute":false},"image_src":{"selector":"img[src]","accessor":"src","attribute":true},"submit":{"selector":"input[type='submit'],input[type='button'], input[type='reset']","accessor":"value","attribute":true},"placeholder":{"selector":"input[placeholder],textarea[placeholder]","accessor":"placeholder","attribute":true},"title":{"selector":"[title]","accessor":"title","attribute":true},"a_href":{"selector":"a[href]","accessor":"href","attribute":true},"button":{"accessor":"outertext","attribute":false},"option":{"accessor":"innertext","attribute":false},"aria_label":{"selector":"[aria-label]","accessor":"aria-label","attribute":true},"video_src":{"selector":"video[src]","accessor":"src","attribute":true},"video_poster":{"selector":"video[poster]","accessor":"poster","attribute":true},"video_source_src":{"selector":"video source[src]","accessor":"src","attribute":true},"audio_src":{"selector":"audio[src]","accessor":"src","attribute":true},"audio_source_src":{"selector":"audio source[src]","accessor":"src","attribute":true},"picture_image_src":{"selector":"picture image[src]","accessor":"src","attribute":true},"picture_source_srcset":{"selector":"picture source[srcset]","accessor":"srcset","attribute":true}},"trp_attributes_accessors":["outertext","innertext","src","value","placeholder","title","href","aria-label","poster","srcset"],"gettranslationsnonceregular":"346063d98e","showdynamiccontentbeforetranslation":"","skip_strings_from_dynamic_translation":[],"skip_strings_from_dynamic_translation_for_substrings":{"href":["amazon-adsystem","googleads","g.doubleclick"]},"duplicate_detections_allowed":"100","trp_translate_numerals_opt":"no","trp_no_auto_translation_selectors":["[data-no-auto-translation]"]};
-	//# sourceURL=trp-dynamic-translator-js-extra
-	/* ]]> */
-	</script> 
-	<script id="trp-dynamic-translator-js" src="../wp-content/plugins/translatepress-multilingual/assets/js/trp-translate-dom-changes8d18.js?ver=3.0.5" type="text/javascript">
-	</script> 
-	<script id="wp-hooks-js" src="../wp-includes/js/dist/hooks.minaf5f.js?ver=dd5603f07f9220ed27f1" type="text/javascript">
-	</script> 
-	<script id="wp-i18n-js" src="../wp-includes/js/dist/i18n.min1cde.js?ver=c26c3dc7bed366793375" type="text/javascript">
-	</script> 
-	<script id="wp-i18n-js-after" type="text/javascript">
-	/* <![CDATA[ */
-	wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-	//# sourceURL=wp-i18n-js-after
-	/* ]]> */
-	</script> 
-	<script id="swv-js" src="../wp-content/plugins/contact-form-7/includes/swv/js/index1b46.js?ver=6.1.4" type="text/javascript">
-	</script> 
-	<script id="contact-form-7-js-before" type="text/javascript">
-	/* <![CDATA[ */
-	var wpcf7 = {
-	   "api": {
-	       "root": "https:\/\/crypto-assets-management.com\/en\/wp-json\/",
-	       "namespace": "contact-form-7\/v1"
-	   }
-	};
-	//# sourceURL=contact-form-7-js-before
-	/* ]]> */
-	</script> 
-	<script id="contact-form-7-js" src="../wp-content/plugins/contact-form-7/includes/js/index1b46.js?ver=6.1.4" type="text/javascript">
-	</script> 
-	<script id="theme-bundle-js" src="../wp-content/themes/cam/assets/js/theme.bundle5152.js?ver=1.0" type="text/javascript">
-	</script> 
-	<script id="assan-js" src="../../cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min5152.js?ver=1.0" type="text/javascript">
-	</script> 
-	<script id="google-recaptcha-js" src="../../www.google.com/recaptcha/api4df8.js?render=6Lfq3xImAAAAADa6BwGHylJxPAx1iGAoj47WT54e&amp;ver=3.0" type="text/javascript">
-	</script> 
-	<script id="wp-polyfill-js" src="../wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0" type="text/javascript">
-	</script> 
-	<script id="wpcf7-recaptcha-js-before" type="text/javascript">
-	/* <![CDATA[ */
-	var wpcf7_recaptcha = {
-	   "sitekey": "6Lfq3xImAAAAADa6BwGHylJxPAx1iGAoj47WT54e",
-	   "actions": {
-	       "homepage": "homepage",
-	       "contactform": "contactform"
-	   }
-	};
-	//# sourceURL=wpcf7-recaptcha-js-before
-	/* ]]> */
-	</script> 
-	<script id="wpcf7-recaptcha-js" src="../wp-content/plugins/contact-form-7/modules/recaptcha/index1b46.js?ver=6.1.4" type="text/javascript">
-	</script> 
-	<script id="react-js" src="../wp-includes/js/dist/vendor/react.mine1ab.js?ver=18.3.1.1" type="text/javascript">
-	</script> 
-	<script id="react-dom-js" src="../wp-includes/js/dist/vendor/react-dom.mine1ab.js?ver=18.3.1.1" type="text/javascript">
-	</script> 
-	<script id="bp3d-public-js-extra" type="text/javascript">
-	/* <![CDATA[ */
-	var bp3dBlock = {"modelViewerSrc":"https://crypto-assets-management.com/wp-content/plugins/3d-viewer/public/js/model-viewer.latest.min.js","o3dviewerSrc":"https://crypto-assets-management.com/wp-content/plugins/3d-viewer/public/js/o3dv.min.js","selectors":{"gallery":".woocommerce-product-gallery","gallery_item":".woocommerce-product-gallery__image","gallery_item_active":".woocommerce-product-gallery__image.flex-active-slide","gallery_thumbnail_item":".flex-control-thumbs li","gallery_trigger":".woocommerce-product-gallery__trigger"}};
-	var assetsUrl = {"siteUrl":"https://crypto-assets-management.com","assetsUrl":"https://crypto-assets-management.com/wp-content/plugins/3d-viewer//public"};
-	var bp3dBlock = {"modelViewerSrc":"https://crypto-assets-management.com/wp-content/plugins/3d-viewer/public/js/model-viewer.latest.min.js","o3dviewerSrc":"https://crypto-assets-management.com/wp-content/plugins/3d-viewer/public/js/o3dv.min.js","selectors":{"gallery":".woocommerce-product-gallery","gallery_item":".woocommerce-product-gallery__image","gallery_item_active":".woocommerce-product-gallery__image.flex-active-slide","gallery_thumbnail_item":".flex-control-thumbs li","gallery_trigger":".woocommerce-product-gallery__trigger"}};
-	//# sourceURL=bp3d-public-js-extra
-	/* ]]> */
-	</script> 
-	<script id="bp3d-public-js" src="../wp-content/plugins/3d-viewer/build/frontendef6d.js?ver=1.8.2" type="text/javascript">
-	</script> 
-	<script id="bp3d-model-viewer-js" src="../wp-content/plugins/3d-viewer/public/js/model-viewer.latest.minef6d.js?ver=1.8.2" type="module">
-	</script>
-	<script id="bold-timeline-js" src="../wp-content/plugins/bold-timeline/assets/js/bold-timelined4d0.js?ver=6.9" type="text/javascript">
-	</script> 
+
+
+
 	<script id="logo-slider-wp-swiper-js-js" src="../wp-content/plugins/logo-slider-wp/public/assets/libs/swiper/swiper-bundle.min8a54.js?ver=1.0.0" type="text/javascript">
 	</script> 
 	<script id="logo-slider-wp-public-js" src="../wp-content/plugins/logo-slider-wp/public/assets/js/logo-slider-wp-public8a54.js?ver=1.0.0" type="text/javascript">
 	</script> 
-	<script id="mailpoet_recaptcha-js" src="../../www.google.com/recaptcha/api7984.js?render=explicit&amp;ver=6.9" type="text/javascript">
-	</script> 
-	<script id="mailpoet_public-js-extra" type="text/javascript">
-	/* <![CDATA[ */
-	var MailPoetForm = {"ajax_url":"https://crypto-assets-management.com/wp-admin/admin-ajax.php","is_rtl":"","ajax_common_error_message":"An error has happened while performing a request, please try again later."};
-	//# sourceURL=mailpoet_public-js-extra
-	/* ]]> */
-	</script> 
-	<script data-wp-strategy="defer" defer="defer" id="mailpoet_public-js" src="../wp-content/plugins/mailpoet/assets/dist/js/publicebe4.js?ver=5.17.3" type="text/javascript">
-	</script> 
-	<script id="wp-emoji-settings" type="application/json">
-	{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://crypto-assets-management.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
-	</script> 
-	<script type="module">
-	/* <![CDATA[ */
-	/*! This file is auto-generated */
-	const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-	//# sourceURL=https://crypto-assets-management.com/wp-includes/js/wp-emoji-loader.min.js
-	/* ]]> */
-	</script> <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4YD4GN2VSS">
-	</script> 
-	<script src="../wp-content/themes/cam/js/dist/bundle.js" type="module">
-	</script> 
-	<script>
-	 window.dataLayer = window.dataLayer || [];
-	 function gtag(){dataLayer.push(arguments);}
-	 gtag('js', new Date());
 
-	 gtag('config', 'G-4YD4GN2VSS');
-	</script> 
-	<script>
 
-	       const config = {
-	           type: 'line',
-	           data: {
-	               labels: [ 'Avril 2020', 'Mai 2020', 'Juin 2020', 'Juillet 2020', 'Août 2020', 'Septembre 2020', 'Octobre 2020', 'Novembre 2020', 'Décembre 2020', 'Janvier 2021', 'Février 2021', 'Mars 2021', 'Avril 2021', 'Mai 2021', 'Juin 2021', 'Juillet 2021', 'Août 2021', 'Septembre 2021', 'Octobre 2021', 'Novembre 2021', 'Décembre 2021', 'Janvier 2022', 'Février 2022','Mars 2022' ],
-	               datasets: [
-	                                       {
-	                       label: 'Portefeuille offensif',
-	                       backgroundColor: '#ff4116',
-	                       borderColor: '#ff4116',
-	                       data: [100, 151, 163, 160, 251, 380, 335, 410, 470, 505, 923, 1463, 1682, 2130, 1560, 1302, 1615, 1995, 1856, 2337, 2422, 2005,1590,1659],
-	                   },
-	                                       {
-	                       label: 'Portefeuille classique',
-	                       backgroundColor: '#000000',
-	                       borderColor: '#000000',
-	                       data: [100, 143, 155, 149, 208, 275, 245, 276, 346, 425, 731, 1050, 1177, 1424, 1095, 949, 1154, 1391, 1328,1652,1695,1427,1162,1238],
-	                   },
-	                                       {
-	                       label: 'Portefeuille défensif',
-	                       backgroundColor: '#3939f9',
-	                       borderColor: '#3939f9',
-	                       data: [100, 135, 145, 140, 190, 235, 210, 240, 295, 340, 548, 707, 771, 890, 717, 645, 768, 903, 884,1086,1104,944, 789,858],
-	                   },
-	                                   ]
-	           },
-	           options: {
-	               interaction: {
-	                   intersect: false
-	               },
-	               plugins: {
-	                   legend: true
-	               }
-	           }
-	       };
-	       var myChart = new Chart(
-	           document.getElementById('myChart'),
-	           config
-	       );
-	</script>
+	<script src="header.js" type="module"></script>
 </body>
 </html>
