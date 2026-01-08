@@ -25,7 +25,7 @@ function renderLoggedOut(container) {
   container.innerHTML = "";
   container.appendChild(
     el("a", { class: "btn btn-primary btn-sm", href: LOGIN_URL }, [
-      document.createTextNode(" Customer access"),
+      document.createTextNode("登入"),
     ])
   );
 }
@@ -45,13 +45,13 @@ function renderLoggedIn(container, email) {
   const accountBtn = document.createElement("a");
   accountBtn.className = "btn btn-primary btn-sm me-2";
   accountBtn.href = "account.html"; // ← 你要的頁
-  accountBtn.innerHTML = `Account manage`;
+  accountBtn.innerHTML = `帳務中心`;
 
   /* Logout（不是超連結） */
   const logoutBtn = document.createElement("button");
   logoutBtn.type = "button";
   logoutBtn.className = "btn btn-primary btn-sm";
-  logoutBtn.innerHTML = `Logout`;
+  logoutBtn.innerHTML = `登出`;
 
   logoutBtn.addEventListener("click", async () => {
     await supabase.auth.signOut();

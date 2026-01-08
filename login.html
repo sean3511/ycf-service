@@ -29,7 +29,7 @@
 				<a class="navbar-brand" href="index.html"><img alt="" class="img-fluid" src="wp-content/themes/cam/img/logo.jpg"></a>
 				<div class="d-none d-sm-flex align-items-center navbar-no-collapse-items order-lg-last">
 					<div class="nav-item me-6 me-lg-0" id="headerAuthActions">
-						<a class="btn btn-primary btn-sm" href="login.html">Customer access</a>
+						<a class="btn btn-primary btn-sm" href="login.html">登入</a>
 					</div>
 				</div>
 				<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
@@ -39,7 +39,7 @@
 				<div class="collapse navbar-collapse" id="navbar-demo-1">
 					<ul class="navbar-nav mx-auto">
 						<li class="nav-item d-block d-sm-none mb-2" id="headerAuthActionsMobile">
-							<a class="btn btn-primary btn-sm" href="login.html">Customer access</a>
+							<a class="btn btn-primary btn-sm" href="login.html">登入</a>
 						</li>
 					</ul>
 				</div>
@@ -50,40 +50,38 @@
   <div class="user_options-container">
     <div class="user_options-text">
       <div class="user_options-unregistered">
-        <h2 class="user_unregistered-title">Don't have an account?</h2>
-        <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
-        <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+        <h2 style="color: white;" class="user_unregistered-title">沒有帳號嗎?</h2>
+        <button class="user_unregistered-signup" id="signup-button">註冊</button>
       </div>
 
       <div class="user_options-registered">
-        <h2 class="user_registered-title">Have an account?</h2>
-        <p class="user_registered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
-        <button class="user_registered-login" id="login-button">Login</button>
+        <h2 style="color: white;" class="user_registered-title">已經有帳號了</h2>
+        <button class="user_registered-login" id="login-button">登入</button>
       </div>
     </div>
     
 <div class="user_options-forms" id="user_options-forms">
 
   <div class="user_forms-login">
-    <h2 class="forms_title">Login</h2>
+    <h2 class="forms_title">登入</h2>
     <form class="forms_form">
       <fieldset class="forms_fieldset">
         <div class="forms_field">
           <input id="loginEmail" type="email" placeholder="Email" class="forms_field-input" required autofocus />
         </div>
         <div class="forms_field">
-          <input id="loginPassword" type="password" placeholder="Password" class="forms_field-input" required />
+          <input id="loginPassword" type="password" placeholder="密碼" class="forms_field-input" required />
         </div>
       </fieldset>
       <div class="forms_buttons">
-        <a href="change_password.html"><button type="button" class="forms_buttons-forgot">Forgot password?</button></a>
-        <input type="submit" value="Log In" class="forms_buttons-action">
+        <a href="change_password.html"><button type="button" class="forms_buttons-forgot">忘記密碼</button></a>
+        <input type="submit" value="登入" class="forms_buttons-action">
       </div>
     </form>
   </div>
 
   <div class="user_forms-signup">
-    <h2 class="forms_title">Sign Up</h2>
+    <h2 class="forms_title">註冊</h2>
     <form class="forms_form">
       <fieldset class="forms_fieldset">
         <div class="forms_field">
@@ -92,15 +90,15 @@
 
         <!-- 新增：錢包地址（不限制格式，純文字） -->
         <div class="forms_field">
-          <input id="signupWallet" type="text" placeholder="Wallet Address (e.g. 0x...)" class="forms_field-input" required />
+          <input id="signupWallet" type="text" placeholder="錢包地址 (e.g. 0x...)" class="forms_field-input" required />
         </div>
 
         <div class="forms_field">
-          <input id="signupPassword" type="password" placeholder="Password" class="forms_field-input" required />
+          <input id="signupPassword" type="password" placeholder="密碼" class="forms_field-input" required />
         </div>
       </fieldset>
       <div class="forms_buttons">
-        <input type="submit" value="Sign up" class="forms_buttons-action">
+        <input type="submit" value="註冊" class="forms_buttons-action">
       </div>
     </form>
   </div>
